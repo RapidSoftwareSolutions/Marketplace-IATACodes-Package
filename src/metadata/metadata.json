@@ -1,10 +1,10 @@
 {
   "package": "IATACodes",
   "tagline": "IATACodes API",
-  "description": "IATACodes",
+  "description": "Get aviation-specific codes (IATA/ICAO) and flight data.",
   "image": "http:\/\/logo.clearbit.com\/iatacodes.org",
   "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-IATACodes-Package",
-  "keywords": [
+  "keywords": [ "API", "aviation", "data", "flight", "fly", "travel"
   ],
   "accounts": {
     "domain": "iatacodes.org",
