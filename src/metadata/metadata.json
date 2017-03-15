@@ -534,7 +534,7 @@
       ]
     },
     {
-      "name": "getRouteByFlightNumbers",
+      "name": "getRoutesByFlightNumbers",
       "description": "Get data by flight numbers",
       "args": [
         {

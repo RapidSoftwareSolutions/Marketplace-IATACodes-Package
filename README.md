@@ -149,7 +149,7 @@ Get data by all routes
 | apiKey  | credentials| Api key obtained from IATACodes
 | language| String     | Language. Possible values: en (by default), fr, de, es, it, ru, th, tr
 
-## IATACodes.getRouteByFlightNumbers
+## IATACodes.getRoutesByFlightNumbers
 Get data by flight numbers
 
 | Field        | Type       | Description
