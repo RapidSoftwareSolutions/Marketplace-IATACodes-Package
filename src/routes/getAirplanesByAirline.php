@@ -18,13 +18,13 @@ $app->post('/api/IATACodes/getAirplanesByAirline', function ($request, $response
     if (isset($post_data['args']['language']) && strlen($post_data['args']['language']) > 0) {
         $body['lang'] = $post_data['args']['language'];
     }
-    if(isset($post_data['args']['page']) && strlen($post_data['args']['page']) > 0){
+    if (isset($post_data['args']['page']) && strlen($post_data['args']['page']) > 0) {
         $body['page'] = $post_data['args']['page'];
     } else {
         $body['page'] = 0;
     }
 
-    if(isset($post_data['args']['limit']) && strlen($post_data['args']['limit']) > 0){
+    if (isset($post_data['args']['limit']) && strlen($post_data['args']['limit']) > 0) {
         $body['limit'] = $post_data['args']['limit'];
     } else {
         $body['limit'] = 1;
@@ -42,15 +42,20 @@ $app->post('/api/IATACodes/getAirplanesByAirline', function ($request, $response
         $responseBody = $resp->getBody()->getContents();
         $rawBody = json_decode($resp->getBody());
         $errorSet = json_decode($responseBody, true)['error'];
+        $reply = json_decode($responseBody, true)['response'];
 
         $all_data[] = $rawBody;
-        if ($response->getStatusCode() == '200' && $errorSet === null) {
+        if ($response->getStatusCode() == '200' && $errorSet === null && $reply != null) {
             $result['callback'] = 'success';
             $result['contextWrites']['to'] = is_array($all_data) ? $all_data : json_decode($all_data);
         } else {
             $result['callback'] = 'error';
             $result['contextWrites']['to']['status_code'] = 'API_ERROR';
-            $result['contextWrites']['to']['status_msg'] = is_array($responseBody) ? $responseBody : json_decode($responseBody);
+            if ($reply === null) {
+                $result['contextWrites']['to']['status_msg'] = 'This functional may be available in paid plan only';
+            } else {
+                $result['contextWrites']['to']['status_msg'] = is_array($responseBody) ? $responseBody : json_decode($responseBody);
+            }
         }
 
     } catch (\GuzzleHttp\Exception\ClientException $exception) {
