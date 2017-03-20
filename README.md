@@ -2,7 +2,7 @@
 
 # IATACodes Package
 IATACodes
-* Domain: iatacodes.org
+* Domain: [IATACodes](http://iatacodes.org/) 
 * Credentials: apiKey
 
 ## How to get credentials: 
