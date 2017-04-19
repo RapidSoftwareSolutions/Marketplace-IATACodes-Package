@@ -15,6 +15,6 @@ return [
             'path' => __DIR__ . '/../logs/app.log',
             'level' => \Monolog\Logger::DEBUG,
         ],
-        'api_url' => 'https://iatacodes.org/api/v6/',
+        'api_url' => 'http://iatacodes.org/api/v6/',
     ],
 ];
