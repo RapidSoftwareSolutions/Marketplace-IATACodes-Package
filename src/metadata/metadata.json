@@ -1,818 +1,771 @@
-{
-  "package": "IATACodes",
-  "tagline": "IATACodes API",
-  "description": "Get aviation-specific codes (IATA/ICAO) and flight data.",
-  "image": "http:\/\/logo.clearbit.com\/iatacodes.org",
-  "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-IATACodes-Package",
-  "keywords": [ "API", "aviation", "data", "flight", "fly", "travel"
-  ],
-  "accounts": {
-    "domain": "iatacodes.org",
-    "credentials": [
-      "apiKey"
-    ]
-  },
-  "blocks": [
-    {
-      "name": "getAirports",
-      "description": "Get data by all airports",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getAirportsByCodes",
-      "description": "Get one or multiple airports using IATA codes",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "airportCodes",
-          "type": "String",
-          "info": "IATA codes of airports separated by coma",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getCities",
-      "description": "Get data by all cities",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getCitiesByCodes",
-      "description": "Get one or multiple cities using IATA codes",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "cityCodes",
-          "type": "Array",
-          "info": "IATA codes of cities",
-          "structcure":[
-            { name:"cityCode", type:"String", description:"IATA code of a city", placeholder:"" }
-          ],
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getCountries",
-      "description": "Get data by all countries",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getCountriesByCodes",
-      "description": "Get one or multiple countries using IATA codes",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "countryCodes",
-          "type": "String",
-          "info": "IATA codes of countries separated by coma",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getAirlines",
-      "description": "Get data by all airlines",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getAirlinesByCodes",
-      "description": "Get one or multiple airlines using IATA codes",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "airlineCodes",
-          "type": "String",
-          "info": "IATA codes of airlines separated by coma",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getTaxes",
-      "description": "Get data by all taxes",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getTaxesByCodes",
-      "description": "Get one or multiple taxes using codes",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "taxCodes",
-          "type": "String",
-          "info": "Codes of taxes separated by coma",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getAircrafts",
-      "description": "Get data by all aircrafts",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getAircraftsByCodes",
-      "description": "Get one or multiple aircrafts using IATA codes",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "aircraftCodes",
-          "type": "String",
-          "info": "IATA codes of aircrafts separated by coma",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getAirplanes",
-      "description": "Get data by all airplanes",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        },
-        {
-          "name": "page",
-          "type": "Number",
-          "info": "Page number",
-          "required": false
-        },
-        {
-          "name": "limit",
-          "type": "Number",
-          "info": "Limit per page",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getAirplaneByRegistrationNumber",
-      "description": "Get one airplanes using Registration Number",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "airplaneRegistrationNumber",
-          "type": "String",
-          "info": "Airplanes Registration Number",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getAirplanesByAirline",
-      "description": "Get airplanes using airline code",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "airlineCode",
-          "type": "String",
-          "info": "Airline IATA code",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        },
-        {
-          "name": "page",
-          "type": "Number",
-          "info": "Page number",
-          "required": false
-        },
-        {
-          "name": "limit",
-          "type": "Number",
-          "info": "Limit per page",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getRoutes",
-      "description": "Get data by all routes",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getRoutesByFlightNumbers",
-      "description": "Get data by flight numbers",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "flightNumbers",
-          "type": "String",
-          "info": "Flight numbers separated by coma",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getRoutesByDepartureCodes",
-      "description": "Get data by departure codes",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "departureCodes",
-          "type": "String",
-          "info": "Departure codes separated by coma",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getRoutesByArrivalCodes",
-      "description": "Get data by arrival codes",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "arrivalCodes",
-          "type": "String",
-          "info": "Arrival codes separated by coma",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getTimezones",
-      "description": "Get data by all timezones",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "autocompleteQuery",
-      "description": "Find airports and cities by query string",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "query",
-          "type": "String",
-          "info": "Request query",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getNearByAirports",
-      "description": "Find nearest airports by latitude/longitude and distance",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "latitude",
-          "type": "String",
-          "info": "Location latitude",
-          "required": true
-        },
-        {
-          "name": "longitude",
-          "type": "String",
-          "info": "Location longitude",
-          "required": true
-        },
-        {
-          "name": "distance",
-          "type": "Number",
-          "info": "Distance from location",
-          "required": false
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getWorldFlights",
-      "description": "Real-Time information about current flights in world",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getSingleAirportTimetable",
-      "description": "Current timetable by specified airport ",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from IATACodes",
-          "required": true
-        },
-        {
-          "name": "airportCode",
-          "type": "String",
-          "info": "IATA code of airport",
-          "required": true
-        },
-        {
-          "name": "timetableType",
-          "type": "String",
-          "info": "Type of timetable. Possible values: arrival, departure",
-          "required": false
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    }
-  ]
-}
+       {
+       	"package": "IATACodes",
+       	"tagline": "IATACodes API",
+       	"description": "Get aviation-specific codes (IATA/ICAO) and flight data.",
+       	"image": "http:\/\/logo.clearbit.com\/iatacodes.org",
+       	"repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-IATACodes-Package",
+       	"keywords": ["API", "aviation", "data", "flight", "fly", "travel"],
+       	"accounts": {
+       		"domain": "iatacodes.org",
+       		"credentials": [
+       			"apiKey"
+       		]
+       	},
+       	"blocks": [{
+       			"name": "getAirports",
+       			"description": "Get data by all airports",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getAirportsByCodes",
+       			"description": "Get one or multiple airports using IATA codes",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "airportCodes",
+       					"type": "String",
+       					"info": "IATA codes of airports separated by coma",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getCities",
+       			"description": "Get data by all cities",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getCitiesByCodes",
+       			"description": "Get one or multiple cities using IATA codes",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "cityCodes",
+       					"type": "Array",
+       					"info": "IATA codes of cities",
+       					"structcure": [{
+       						"name": "cityCode",
+       						"type": "String",
+       						"description": "IATA code of a city",
+       						"placeholder": ""
+       					}],
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getCountries",
+       			"description": "Get data by all countries",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getCountriesByCodes",
+       			"description": "Get one or multiple countries using IATA codes",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "countryCodes",
+       					"type": "String",
+       					"info": "IATA codes of countries separated by coma",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getAirlines",
+       			"description": "Get data by all airlines",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getAirlinesByCodes",
+       			"description": "Get one or multiple airlines using IATA codes",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "airlineCodes",
+       					"type": "String",
+       					"info": "IATA codes of airlines separated by coma",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getTaxes",
+       			"description": "Get data by all taxes",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getTaxesByCodes",
+       			"description": "Get one or multiple taxes using codes",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "taxCodes",
+       					"type": "String",
+       					"info": "Codes of taxes separated by coma",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getAircrafts",
+       			"description": "Get data by all aircrafts",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getAircraftsByCodes",
+       			"description": "Get one or multiple aircrafts using IATA codes",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "aircraftCodes",
+       					"type": "String",
+       					"info": "IATA codes of aircrafts separated by coma",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getAirplanes",
+       			"description": "Get data by all airplanes",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				},
+       				{
+       					"name": "page",
+       					"type": "Number",
+       					"info": "Page number",
+       					"required": false
+       				},
+       				{
+       					"name": "limit",
+       					"type": "Number",
+       					"info": "Limit per page",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getAirplaneByRegistrationNumber",
+       			"description": "Get one airplanes using Registration Number",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "airplaneRegistrationNumber",
+       					"type": "String",
+       					"info": "Airplanes Registration Number",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getAirplanesByAirline",
+       			"description": "Get airplanes using airline code",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "airlineCode",
+       					"type": "String",
+       					"info": "Airline IATA code",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				},
+       				{
+       					"name": "page",
+       					"type": "Number",
+       					"info": "Page number",
+       					"required": false
+       				},
+       				{
+       					"name": "limit",
+       					"type": "Number",
+       					"info": "Limit per page",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getRoutes",
+       			"description": "Get data by all routes",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getRoutesByFlightNumbers",
+       			"description": "Get data by flight numbers",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "flightNumbers",
+       					"type": "String",
+       					"info": "Flight numbers separated by coma",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getRoutesByDepartureCodes",
+       			"description": "Get data by departure codes",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "departureCodes",
+       					"type": "String",
+       					"info": "Departure codes separated by coma",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getRoutesByArrivalCodes",
+       			"description": "Get data by arrival codes",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "arrivalCodes",
+       					"type": "String",
+       					"info": "Arrival codes separated by coma",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getTimezones",
+       			"description": "Get data by all timezones",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "autocompleteQuery",
+       			"description": "Find airports and cities by query string",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "query",
+       					"type": "String",
+       					"info": "Request query",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getNearByAirports",
+       			"description": "Find nearest airports by latitude/longitude and distance",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "latitude",
+       					"type": "String",
+       					"info": "Location latitude",
+       					"required": true
+       				},
+       				{
+       					"name": "longitude",
+       					"type": "String",
+       					"info": "Location longitude",
+       					"required": true
+       				},
+       				{
+       					"name": "distance",
+       					"type": "Number",
+       					"info": "Distance from location",
+       					"required": false
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getWorldFlights",
+       			"description": "Real-Time information about current flights in world",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		},
+       		{
+       			"name": "getSingleAirportTimetable",
+       			"description": "Current timetable by specified airport ",
+       			"args": [{
+       					"name": "apiKey",
+       					"type": "credentials",
+       					"info": "Api key obtained from IATACodes",
+       					"required": true
+       				},
+       				{
+       					"name": "airportCode",
+       					"type": "String",
+       					"info": "IATA code of airport",
+       					"required": true
+       				},
+       				{
+       					"name": "timetableType",
+       					"type": "String",
+       					"info": "Type of timetable. Possible values: arrival, departure",
+       					"required": false
+       				},
+       				{
+       					"name": "language",
+       					"type": "String",
+       					"info": "Language. Possible values: en (by default), fr, de, es, it, ru, th, tr",
+       					"required": false
+       				}
+       			],
+       			"callbacks": [{
+       					"name": "error",
+       					"info": "Error"
+       				},
+       				{
+       					"name": "success",
+       					"info": "Success"
+       				}
+       			]
+       		}
+       	]
+       }
