@@ -115,8 +115,11 @@
         },
         {
           "name": "cityCodes",
-          "type": "String",
-          "info": "IATA codes of cities separated by coma",
+          "type": "Array",
+          "info": "IATA codes of cities",
+          "structcure":[
+            { name:"cityCode", type:"String", description:"IATA code of a city", placeholder:"" }
+          ],
           "required": true
         },
         {
