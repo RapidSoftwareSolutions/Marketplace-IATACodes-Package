@@ -108,7 +108,7 @@
        					"name": "cityCodes",
        					"type": "Array",
        					"info": "IATA codes of cities",
-       					"structcure": [{
+       					"structure": [{
        						"name": "cityCode",
        						"type": "String",
        						"description": "IATA code of a city",
