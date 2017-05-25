@@ -196,13 +196,12 @@ Find airports and cities by query string
 ## IATACodes.getNearByAirports
 Find nearest airports by latitude/longitude and distance
 
-| Field    | Type       | Description
-|----------|------------|----------
-| apiKey   | credentials| Api key obtained from IATACodes
-| latitude | String     | Location latitude
-| longitude| String     | Location longitude
-| distance | Number     | Distance from location
-| language | String     | Language. Possible values: en (by default), fr, de, es, it, ru, th, tr
+| Field       | Type       | Description
+|-------------|------------|----------
+| apiKey      | credentials| Api key obtained from IATACodes
+| coordinates | String     | Location latitude and longitude coma separated
+| distance    | Number     | Distance from location
+| language    | String     | Language. Possible values: en (by default), fr, de, es, it, ru, th, tr
 
 ## IATACodes.getWorldFlights
 Real-Time information about current flights in world

@@ -4,7 +4,7 @@ $app->post('/api/IATACodes/getNearByAirports', function ($request, $response, $a
 
     //checking properly formed json
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['apiKey', 'latitude', 'longitude']);
+    $validateRes = $checkRequest->validate($request, ['apiKey']);
     if (!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback'] == 'error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
     } else {
@@ -14,8 +14,13 @@ $app->post('/api/IATACodes/getNearByAirports', function ($request, $response, $a
     $query_str = $settings['api_url'] . "nearby";
     $body = array();
     $body['api_key'] = $post_data['args']['apiKey'];
-    $body['lat'] = $post_data['args']['latitude'];
-    $body['lng'] = $post_data['args']['longitude'];
+    if (isset($post_data['args']['coordinates']) && strlen($post_data['args']['coordinates']) > 0){
+        $body['lat'] = explode(',', $post_data['args']['coordinates'])[0];
+        $body['lng'] = explode(',', $post_data['args']['coordinates'])[1];
+    } else {
+        $body['lat'] = $post_data['args']['latitude'];
+        $body['lng'] = $post_data['args']['longitude'];
+    }
 
     if(isset($post_data['args']['distance']) && strlen($post_data['args']['distance']) > 0){
         $body['distance'] = $post_data['args']['distance'];
