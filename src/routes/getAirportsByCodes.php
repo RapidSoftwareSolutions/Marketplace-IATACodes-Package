@@ -14,7 +14,7 @@ $app->post('/api/IATACodes/getAirportsByCodes', function ($request, $response, $
     $query_str = $settings['api_url'] . "airports";
     $body = array();
     $body['api_key'] = $post_data['args']['apiKey'];
-    $body['code'] = $post_data['args']['airportCodes'];
+    $body['code'] = implode (',', $post_data['args']['airportCodes']);
     if(isset($post_data['args']['language']) && strlen($post_data['args']['language']) > 0){
         $body['lang'] = $post_data['args']['language'];
     }

@@ -23,7 +23,7 @@ Get one or multiple airports using IATA codes
 | Field       | Type       | Description
 |-------------|------------|----------
 | apiKey      | credentials| Api key obtained from IATACodes
-| airportCodes| String     | IATA codes of airports separated by coma
+| airportCodes| Array      | IATA codes of airports as array
 | language    | String     | Language. Possible values: en (by default), fr, de, es, it, ru, th, tr
 
 ## IATACodes.getCities
@@ -40,7 +40,7 @@ Get one or multiple cities using IATA codes
 | Field    | Type       | Description
 |----------|------------|----------
 | apiKey   | credentials| Api key obtained from IATACodes
-| cityCodes| String     | IATA codes of cities separated by coma
+| cityCodes| Array      | IATA codes of cities array
 | language | String     | Language. Possible values: en (by default), fr, de, es, it, ru, th, tr
 
 ## IATACodes.getCountries
@@ -57,7 +57,7 @@ Get one or multiple countries using IATA codes
 | Field       | Type       | Description
 |-------------|------------|----------
 | apiKey      | credentials| Api key obtained from IATACodes
-| countryCodes| String     | IATA codes of countries separated by coma
+| countryCodes| Array      | IATA codes of countries as array
 | language    | String     | Language. Possible values: en (by default), fr, de, es, it, ru, th, tr
 
 ## IATACodes.getAirlines
@@ -74,7 +74,7 @@ Get one or multiple airlines using IATA codes
 | Field       | Type       | Description
 |-------------|------------|----------
 | apiKey      | credentials| Api key obtained from IATACodes
-| airlineCodes| String     | IATA codes of airlines separated by coma
+| airlineCodes| Array      | IATA codes of airlines as array
 | language    | String     | Language. Possible values: en (by default), fr, de, es, it, ru, th, tr
 
 ## IATACodes.getTaxes
@@ -91,7 +91,7 @@ Get one or multiple taxes using codes
 | Field   | Type       | Description
 |---------|------------|----------
 | apiKey  | credentials| Api key obtained from IATACodes
-| taxCodes| String     | Codes of taxes separated by coma
+| taxCodes| Array      | Codes of taxes as array
 | language| String     | Language. Possible values: en (by default), fr, de, es, it, ru, th, tr
 
 ## IATACodes.getAircrafts
@@ -108,7 +108,7 @@ Get one or multiple aircrafts using IATA codes
 | Field        | Type       | Description
 |--------------|------------|----------
 | apiKey       | credentials| Api key obtained from IATACodes
-| aircraftCodes| String     | IATA codes of aircrafts separated by coma
+| aircraftCodes| Array      | IATA codes of aircrafts as array
 | language     | String     | Language. Possible values: en (by default), fr, de, es, it, ru, th, tr
 
 ## IATACodes.getAirplanes
@@ -127,7 +127,7 @@ Get one airplanes using Registration Number
 | Field                     | Type       | Description
 |---------------------------|------------|----------
 | apiKey                    | credentials| Api key obtained from IATACodes
-| airplaneRegistrationNumber| String     | Airplanes Registration Number
+| airplaneRegistrationNumber| String     | Airplane Registration Number
 | language                  | String     | Language. Possible values: en (by default), fr, de, es, it, ru, th, tr
 
 ## IATACodes.getAirplanesByAirline
@@ -155,7 +155,7 @@ Get data by flight numbers
 | Field        | Type       | Description
 |--------------|------------|----------
 | apiKey       | credentials| Api key obtained from IATACodes
-| flightNumbers| String     | Flight numbers separated by coma
+| flightNumbers| Array      | Flight numbers as array
 | language     | String     | Language. Possible values: en (by default), fr, de, es, it, ru, th, tr
 
 ## IATACodes.getRoutesByDepartureCodes
@@ -164,7 +164,7 @@ Get data by departure codes
 | Field         | Type       | Description
 |---------------|------------|----------
 | apiKey        | credentials| Api key obtained from IATACodes
-| departureCodes| String     | Departure codes separated by coma
+| departureCodes| Array      | Departure codes as array
 | language      | String     | Language. Possible values: en (by default), fr, de, es, it, ru, th, tr
 
 ## IATACodes.getRoutesByArrivalCodes

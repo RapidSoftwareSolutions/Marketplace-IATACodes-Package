@@ -14,7 +14,7 @@ $app->post('/api/IATACodes/getTaxesByCodes', function ($request, $response, $arg
     $query_str = $settings['api_url'] . "taxes";
     $body = array();
     $body['api_key'] = $post_data['args']['apiKey'];
-    $body['code'] = $post_data['args']['taxCodes'];
+    $body['code'] = implode(',', $post_data['args']['taxCodes']);
     if (isset($post_data['args']['language']) && strlen($post_data['args']['language']) > 0) {
         $body['lang'] = $post_data['args']['language'];
     }

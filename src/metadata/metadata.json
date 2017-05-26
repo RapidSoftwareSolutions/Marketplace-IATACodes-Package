@@ -54,8 +54,13 @@
 				},
 				{
 					"name": "airportCodes",
-					"type": "String",
-					"info": "IATA codes of airports separated by coma",
+					"type": "List",
+					"structure": {
+						"name": "airportCode",
+						"type": "String",
+						"info": "Airport code"
+					},
+					"info": "IATA codes of airports in array",
 					"required": true
 				},
 				{
@@ -118,8 +123,13 @@
 				},
 				{
 					"name": "cityCodes",
-					"type": "String",
-					"info": "IATA codes of cities separated by coma",
+					"type": "List",
+					"structure": {
+						"name": "cityCode",
+						"type": "String",
+						"info": "City code"
+					},
+					"info": "IATA codes of cities array",
 					"required": true
 				},
 				{
@@ -182,8 +192,13 @@
 				},
 				{
 					"name": "countryCodes",
-					"type": "String",
-					"info": "IATA codes of countries separated by coma",
+					"type": "List",
+					"structure": {
+						"name": "countryCode",
+						"type": "String",
+						"info": "Country code"
+					},
+					"info": "IATA codes of countries as array",
 					"required": true
 				},
 				{
@@ -246,8 +261,13 @@
 				},
 				{
 					"name": "airlineCodes",
-					"type": "String",
-					"info": "IATA codes of airlines separated by coma",
+					"type": "List",
+					"structure": {
+						"name": "airlineCode",
+						"type": "String",
+						"info": "Airline code"
+					},
+					"info": "IATA codes of airlines as array",
 					"required": true
 				},
 				{
@@ -310,8 +330,13 @@
 				},
 				{
 					"name": "taxCodes",
-					"type": "String",
-					"info": "Codes of taxes separated by coma",
+					"type": "List",
+					"structure": {
+						"name": "taxCode",
+						"type": "String",
+						"info": "Tax code"
+					},
+					"info": "Codes of taxes as array",
 					"required": true
 				},
 				{
@@ -374,8 +399,13 @@
 				},
 				{
 					"name": "aircraftCodes",
-					"type": "String",
-					"info": "IATA codes of aircrafts separated by coma",
+					"type": "List",
+					"structure": {
+						"name": "aircraftCode",
+						"type": "String",
+						"info": "Aircraft code"
+					},
+					"info": "IATA codes of aircrafts as array",
 					"required": true
 				},
 				{
@@ -451,7 +481,7 @@
 				{
 					"name": "airplaneRegistrationNumber",
 					"type": "String",
-					"info": "Airplanes Registration Number",
+					"info": "Airplane Registration Number",
 					"required": true
 				},
 				{
@@ -561,7 +591,12 @@
 				},
 				{
 					"name": "flightNumbers",
-					"type": "String",
+					"type": "List",
+					"structure": {
+						"name": "flightNumber",
+						"type": "String",
+						"info": "Flight number"
+					},
 					"info": "Flight numbers separated by coma",
 					"required": true
 				},
@@ -596,8 +631,13 @@
 				},
 				{
 					"name": "departureCodes",
-					"type": "String",
-					"info": "Departure codes separated by coma",
+					"type": "List",
+					"structure": {
+						"name": "departureCode",
+						"type": "String",
+						"info": "Departure code"
+					},
+					"info": "Departure codes as array",
 					"required": true
 				},
 				{
@@ -631,8 +671,13 @@
 				},
 				{
 					"name": "arrivalCodes",
-					"type": "String",
-					"info": "Arrival codes separated by coma",
+					"type": "List",
+					"structure": {
+						"name": "arrivalCode",
+						"type": "String",
+						"info": "Arrival code"
+					},
+					"info": "Arrival codes as array",
 					"required": true
 				},
 				{
