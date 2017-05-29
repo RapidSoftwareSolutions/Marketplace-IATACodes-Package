@@ -14,7 +14,7 @@ $app->post('/api/IATACodes/getRoutesByDepartureCodes', function ($request, $resp
     $query_str = $settings['api_url'] . "routes";
     $body = array();
     $body['api_key'] = $post_data['args']['apiKey'];
-    $body['departure'] = implode(',', $post_data['args']['departureCodes']);
+    $body['departure'] =is_array($post_data['args']['departureCodes']) ?  implode(',', $post_data['args']['departureCodes']) : $post_data['args']['departureCodes'];
 
     if(isset($post_data['args']['language']) && strlen($post_data['args']['language']) > 0){
         $body['lang'] = $post_data['args']['language'];

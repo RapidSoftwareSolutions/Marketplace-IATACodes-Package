@@ -14,7 +14,7 @@ $app->post('/api/IATACodes/getAircraftsByCodes', function ($request, $response, 
     $query_str = $settings['api_url'] . "aircrafts";
     $body = array();
     $body['api_key'] = $post_data['args']['apiKey'];
-    $body['code'] = implode(',', $post_data['args']['aircraftCodes']);
+    $body['code'] =is_array($post_data['args']['aircraftCodes']) ? implode(',', $post_data['args']['aircraftCodes']) : $post_data['args']['aircraftCodes'];
     if(isset($post_data['args']['language']) && strlen($post_data['args']['language']) > 0){
         $body['lang'] = $post_data['args']['language'];
     }

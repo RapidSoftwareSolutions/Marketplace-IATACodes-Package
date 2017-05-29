@@ -14,8 +14,8 @@ $app->post('/api/IATACodes/getCountriesByCodes', function ($request, $response, 
     $query_str = $settings['api_url'] . "countries";
     $body = array();
     $body['api_key'] = $post_data['args']['apiKey'];
-    $body['code'] = implode(',', $post_data['args']['countryCodes']);
-    if(isset($post_data['args']['language']) && strlen($post_data['args']['language']) > 0){
+    $body['code'] = is_array($post_data['args']['countryCodes']) ? implode(',', $post_data['args']['countryCodes']) : $post_data['args']['countryCodes'];
+    if (isset($post_data['args']['language']) && strlen($post_data['args']['language']) > 0) {
         $body['lang'] = $post_data['args']['language'];
     }
 

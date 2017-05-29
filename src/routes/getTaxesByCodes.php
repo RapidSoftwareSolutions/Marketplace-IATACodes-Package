@@ -14,7 +14,7 @@ $app->post('/api/IATACodes/getTaxesByCodes', function ($request, $response, $arg
     $query_str = $settings['api_url'] . "taxes";
     $body = array();
     $body['api_key'] = $post_data['args']['apiKey'];
-    $body['code'] = implode(',', $post_data['args']['taxCodes']);
+    $body['code'] = is_array($post_data['args']['taxCodes']) ? implode(',', $post_data['args']['taxCodes']) : $post_data['args']['taxCodes'];
     if (isset($post_data['args']['language']) && strlen($post_data['args']['language']) > 0) {
         $body['lang'] = $post_data['args']['language'];
     }
@@ -35,7 +35,7 @@ $app->post('/api/IATACodes/getTaxesByCodes', function ($request, $response, $arg
         $reply = json_decode($responseBody, true)['response'];
 
         $all_data[] = $rawBody;
-        if ($response->getStatusCode() == '200' && $errorSet === null && $reply !=null) {
+        if ($response->getStatusCode() == '200' && $errorSet === null && $reply != null) {
             $result['callback'] = 'success';
             $result['contextWrites']['to'] = is_array($all_data) ? $all_data : json_decode($all_data);
         } else {

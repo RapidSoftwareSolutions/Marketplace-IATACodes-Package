@@ -14,8 +14,8 @@ $app->post('/api/IATACodes/getCitiesByCodes', function ($request, $response, $ar
     $query_str = $settings['api_url'] . "cities";
     $body = array();
     $body['api_key'] = $post_data['args']['apiKey'];
-    $body['code'] = implode(',', $post_data['args']['cityCodes']);
-    if(isset($post_data['args']['language']) && strlen($post_data['args']['language']) > 0){
+    $body['code'] = is_array($post_data['args']['cityCodes']) ? implode(',', $post_data['args']['cityCodes']) : $post_data['args']['cityCodes'];
+    if (isset($post_data['args']['language']) && strlen($post_data['args']['language']) > 0) {
         $body['lang'] = $post_data['args']['language'];
     }
 
